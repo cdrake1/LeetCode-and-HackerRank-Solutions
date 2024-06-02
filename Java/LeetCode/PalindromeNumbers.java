@@ -1,35 +1,39 @@
 package Java.LeetCode;
 
-import java.util.Stack;
+/*
+ Second problem -- Palindrome Numbers
+ Given an integer x, return true if x is a palindrome, and false otherwise.
+ */
 
 class PalindromeNumbers {
 
+    //----------Faster Approach ----------Time Complexity: O(n)---//
+    //beats 100% in speed, beats 81% in memory
     public boolean isPalindromeOne(int x) {
-        if(x <= 0){
+        //if the num is negative it is immediately disqualified
+        if (x < 0){
             return false;
         }
-        
-        Stack<Integer> stack = new Stack<>();
-        int original = x;
-        int palindrome = 0;
 
+        int tempX = x;  //maintain x's value
+        int digitHolder = 0;    //var to hold each digit
+        int palindrome = 0; //the palindrome
+
+        palindrome = x % 10;    //palindrome equals the last digit of x
+        x = x / 10; //remove the last digit from x
+
+        //while loop
         while(x != 0){
-            int remainder = x % 10;
-            stack.push(remainder);
-            x = x / 10;
+            digitHolder = x % 10;   //digitHolder continuosly equals last digit
+            palindrome = (palindrome * 10) + digitHolder;   //add digitHolder to palindrome
+            x = x / 10; //remove digit from x
         }
 
-        palindrome = stack.pop();
-
-        while(!stack.isEmpty()){
-            if(palindrome == 0){
-                palindrome = stack.pop();
-            }
-            else{
-                palindrome = (palindrome * 10) + stack.pop();
-            }
+        //check if equal
+        if(tempX == palindrome){
+            return true;
         }
-        
-        return palindrome == original;
+
+        return false;
     }
 }
