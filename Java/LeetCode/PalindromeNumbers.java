@@ -1,7 +1,7 @@
 package Java.LeetCode;
 
 /*
- Second problem -- Palindrome Numbers
+ Ninth problem -- Palindrome Numbers
  Given an integer x, return true if x is a palindrome, and false otherwise.
  */
 
