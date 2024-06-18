@@ -1,9 +1,9 @@
-package Java.LeetCode;
+package LeetCode;
 
 /*
- Ninth problem -- Palindrome Numbers
+ 9 -- Palindrome Numbers
  Given an integer x, return true if x is a palindrome, and false otherwise.
- */
+*/
 
 class PalindromeNumbers {
 
